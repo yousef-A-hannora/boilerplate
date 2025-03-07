@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { AppError, InternalError } from "../exceptions/customErrors";
 
-type asyncMiddleware = (
+export type asyncMiddleware = (
     req: Request,
     res: Response,
     next: NextFunction

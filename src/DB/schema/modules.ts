@@ -16,5 +16,20 @@ const user = new Schema({
     }
 })
 
-const User = mongoose.model("User",user)
-export default User 
+const tokens = new Schema({
+    token:{
+        type:String,
+        required:true
+    },
+    userId:{
+        type:mongoose.Types.ObjectId,
+        required:true
+    },
+    expires:{
+        type:Date,
+        required:true
+    }
+})
+
+export const User = mongoose.model("User",user)
+export const Token = mongoose.model("Token",tokens)
